@@ -5,6 +5,10 @@ class KYCRecord(models.Model):
         ('OCR', 'OCR'),
         ('MANUAL', 'Manual'),
     )
+    
+    aadhaar_front = models.ImageField(upload_to='aadhaar/front/', null=True, blank=True)
+    aadhaar_back = models.ImageField(upload_to='aadhaar/back/', null=True, blank=True)
+    pan_card = models.ImageField(upload_to='pan/', null=True, blank=True)
 
     name = models.CharField(max_length=255, null=True, blank=True)
     aadhaar_number = models.CharField(max_length=12, null=True, blank=True)
